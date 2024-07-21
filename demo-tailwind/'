@@ -1,0 +1,19 @@
+import { useState, createContext } from "react";
+import ComponentB from "./componentb";
+
+export const UserContext = createContext<string>("");
+
+function ComponentA() {
+  const [user, setUser] = useState("Suga");
+  createContext;
+  return (
+    <div className="border-black border-2 p-2">
+      ComponentA
+      <UserContext.Provider value={{user, setUser}}>
+        <ComponentB></ComponentB>
+      </UserContext.Provider>
+    </div>
+  );
+}
+
+export default ComponentA;

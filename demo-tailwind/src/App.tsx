@@ -7,6 +7,7 @@ import { SelectList } from "./components/select-list";
 import { CustomAlert } from "./components/custom-alert";
 import { MyCalendar } from "./components/my-calendar";
 import { CardContainer } from "./components/card-container";
+import ComponentA from "./components/componenta";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -52,6 +53,7 @@ function App() {
         <MyCalendar></MyCalendar>
       </div>
       <CardContainer></CardContainer>
+      <ComponentA></ComponentA>
     </>
   );
 }
