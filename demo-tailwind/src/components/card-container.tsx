@@ -31,13 +31,19 @@ type CardProps = React.ComponentProps<typeof Card>;
 
 export function CardContainer({ className, ...props }: CardProps) {
   return (
-    <Card className={cn("w-[380px]", className)} {...props}>
+    <Card
+      className={cn(
+        "w-[380px] rounded-none px-6 py-2 font-medium shadow-[10px_10px_0px] shadow-blue-500 bg-sky-100 border-black",
+        className
+      )}
+      {...props}
+    >
       <CardHeader>
         <CardTitle>Notifications</CardTitle>
         <CardDescription>You have 3 unread messages.</CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
-        <div className=" flex items-center space-x-4 rounded-md border p-4">
+        <div className=" flex items-center space-x-4 rounded-none border p-4 bg-red-200 border-black-500">
           <BellRing />
           <div className="flex-1 space-y-1">
             <p className="text-sm font-medium leading-none">
@@ -69,7 +75,7 @@ export function CardContainer({ className, ...props }: CardProps) {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">
+        <Button className="flex grow px-6 py-2 font-medium bg-indigo-500 rounded-none hover:bg-indigo-500 text-white w-fit transition-all shadow-[5px_5px_0px_black] active:shadow-none hover:translate-x-[3px] active:translate-y-[3px]">
           <Check className="mr-2 h-4 w-4" /> Mark all as read
         </Button>
       </CardFooter>
