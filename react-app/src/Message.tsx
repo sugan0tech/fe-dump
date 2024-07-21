@@ -1,5 +1,6 @@
-function Message(){
-  return <h1> Hello World </h1>
+import { Button } from "@/components/ui/button";
+function Message() {
+  return <Button> new button </Button>;
 }
 
-export default Message
+export default Message;

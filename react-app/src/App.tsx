@@ -1,21 +1,28 @@
-import './App.css'
-import ListGroup from './components/ListGroup';
-import Message from './Message'
+import { useState } from "react";
+import "./App.css";
+import Button from "./components/Button";
+import ListGroup from "./components/ListGroup";
+import { MyAlert } from "./components/MyAlert";
+import Message from "./Message";
 
 function App() {
-  let items = [
-    'New York',
-    'San Francisco',
-    'Tokyo',
-    'Test',
-    'Something'
-  ];
+  let items = ["New York", "San Francisco", "Tokyo", "Test", "Something"];
 
-  const handleSelectItem = (item: string) => console.log("from Parent:" + item)
+  const [alertVisible, setAlertVisible] = useState(false);
+  const handleSelectItem = (item: string) => console.log("from Parent:" + item);
 
-  let title = "Cities"
+  let title = "Cities";
 
-  return <div><ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} /></div>
+  return (
+    <>
+      <MyAlert>
+        Hello <span> me </span>
+      </MyAlert>
+      {alertVisible && (
+        <MyAlert classVal="alert-dismissable">Hiden Alert</MyAlert>
+      )}
+    </>
+  );
 }
 
-export default App
+export default App;
